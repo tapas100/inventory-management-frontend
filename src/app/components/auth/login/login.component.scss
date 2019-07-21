@@ -7,6 +7,13 @@
     transform: translateY(50%);
 }
 
+
+.activated-button {
+    background: #ef6c00;
+    color: #fff !important;
+    font-weight: 600;
+  }
+
 @media only screen and (max-width: 600px) {
     .card{
         width: 80%;

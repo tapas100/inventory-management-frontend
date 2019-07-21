@@ -7,6 +7,7 @@ import { BankData } from '../models/Product'
 import { ProductService } from '../services/product.service';
 import { MatDialog } from '@angular/material';
 import { AddProductComponent } from '../components/add-product/add-product.component';
+import { ToastService } from '../services/toast.service';
 
 @Component({
   selector: 'app-home',
@@ -32,7 +33,7 @@ export class HomeComponent implements OnInit {
     'name',
     'price'
   ];
-  constructor(private dataService: DataService, private productService: ProductService, private dialog: MatDialog) { }
+  constructor(private dataService: DataService, private productService: ProductService, private dialog: MatDialog,private toast:ToastService) { }
 
   ngOnInit() {
     this.getProducts()
@@ -76,6 +77,7 @@ export class HomeComponent implements OnInit {
         this.productService.update(res.id, res.data).subscribe(
           response => {
             this.getProducts();
+            this.toast.show('Product Updated successfully !')
           }
         )
       }
@@ -85,6 +87,7 @@ export class HomeComponent implements OnInit {
   deleteProduct(id) {
     this.productService.delete(id).subscribe(response => {
       this.getProducts();
+      this.toast.show('Product deleted successfully !')
     })
   }
 }

@@ -3,6 +3,7 @@ import { DataService } from '../../services/data.service';
 import { MatDialog } from '@angular/material';
 import { AddProductComponent } from '../add-product/add-product.component';
 import { ProductService } from '../../services/product.service';
+import { ToastService } from '../../services/toast.service';
 
 export interface City {
   value: string;
@@ -17,7 +18,7 @@ export interface City {
 export class SearchBarComponent implements OnInit {
   @Output() searchClicked = new EventEmitter<any>()
   searchInput: any;
-  constructor(private dialog: MatDialog, private productService: ProductService, private dataService: DataService) {
+  constructor(private dialog: MatDialog, private productService: ProductService, private dataService: DataService,private taost:ToastService) {
     this.searchClicked = new EventEmitter()
   }
 
@@ -39,6 +40,7 @@ export class SearchBarComponent implements OnInit {
         this.productService.create(res.data).subscribe(
           response => {
             this.getProducts();
+            this.taost.show('Product Added Sucessfully !')
           }
         )
       }

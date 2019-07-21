@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { HttpService } from '../../../services/http.service';
 import { AuthService } from '../../../services/auth.service';
 import { Router } from '@angular/router';
+import { ToastService } from '../../../services/toast.service';
 
 @Component({
   selector: 'app-register',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
   signUp:FormGroup;
-  constructor(private _fb:FormBuilder,private auth:AuthService,private router:Router) { }
+  constructor(private _fb:FormBuilder,private auth:AuthService,private router:Router,private toast:ToastService) { }
 
   ngOnInit() {
     this.initForm();
@@ -29,6 +30,7 @@ export class RegisterComponent implements OnInit {
      this.auth.register(this.signUp.value).subscribe(res=>{
           this.auth.setToken(res.access_token.token)
           this.router.navigate(['/home'])
+          this.toast.show('Registered Sucessfully !')
      })
   }
 }

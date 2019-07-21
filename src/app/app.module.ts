@@ -15,6 +15,7 @@ import { CacheInterceptor } from './interceptors/cache.interceptor';
 import { MaterialModule } from './material.module';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { AppRoutingModule } from './app.routing.module';
+import { ToastService } from './services/toast.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { AppRoutingModule } from './app.routing.module';
     AppRoutingModule
 
   ],
-  providers: [LoaderService, HttpService, HttpcacheService,
+  providers: [LoaderService, HttpService, HttpcacheService,ToastService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: CacheInterceptor,
