@@ -1,0 +1,14 @@
+.content-style {
+  margin: 10px 16px;
+}
+.card {
+    margin: auto;
+    width: 50%;
+    transform: translateY(50%);
+}
+
+@media only screen and (max-width: 600px) {
+    .card{
+        width: 80%;
+    }
+  }

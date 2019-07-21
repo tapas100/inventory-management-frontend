@@ -1,0 +1,7 @@
+<div class="d-flex">
+    <form>
+        <input type="text" class="textbox" (input)="searchEvent()" placeholder="Search" [(ngModel)]="searchInput"
+            [ngModelOptions]="{standalone: true}" />
+    </form>
+    <button mat-raised-button class="w-25" (click)="addProductDialog()">Add</button>
+</div>

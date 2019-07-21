@@ -1,0 +1,19 @@
+@import '~compass-mixins/lib/compass/css3';
+@import '~@angular/material/theming';
+@include mat-core();
+
+  $primary: mat-palette($mat-orange,800);
+  $accent: mat-palette($mat-orange,200);
+
+  $theme: mat-light-theme($primary, $accent);
+
+@include angular-material-theme($theme);
+
+.my-class {
+  @include mat-elevation-transition;
+  @include mat-elevation(2);
+
+  &:active {
+    @include mat-elevation(8);
+  }
+}

@@ -1,0 +1,23 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Product Form</mat-card-title>
+    <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+  </mat-card-header>
+  <mat-card-content class="content-style">
+    <form [formGroup]="productForm">
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Name" formControlName="name" />
+      </mat-form-field>
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Price" formControlName="price" />
+      </mat-form-field>
+      <div class="text-center">
+        <star-rating value="{{rating}}" checkedcolor="red" uncheckedcolor="black" size="24px" readonly="false" (rate)="onRate($event)"></star-rating>
+      </div>
+    </form>
+  </mat-card-content>
+  <mat-card-actions class="text-right">
+    <button mat-button (click)="submit()" [disabled]="!isValidated()">SAVE</button>
+    <button mat-button (click)="dismiss()">CANCEL</button>
+  </mat-card-actions>
+</mat-card>

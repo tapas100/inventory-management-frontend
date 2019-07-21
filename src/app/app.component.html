@@ -1,0 +1,19 @@
+<div class="header-section ">
+  <div class="ml-2 mr-2 h-100 d-flex flex-wrap justify-content-between">
+    <div>
+      <h2 class="font-weight-normal"><img src="./../assets/cct.jpg">BANK SEARCH APP</h2>
+    </div>
+    <div>
+      <button mat-button class="h-100 float-right" (click)="logout()">Logout</button>
+    </div>
+  </div>
+</div>
+<div *ngIf="loadComplete" class="container-fluid">
+  <router-outlet></router-outlet>
+</div>
+<app-loader *ngIf="!loadComplete"></app-loader>
+<div class="footer-section" [ngClass]="{'position-bottom':'!loadComplete'}">
+  <div class="text-center">
+    <span>&copy;Developed by Tapas Mahanta</span>
+  </div>
+</div>
