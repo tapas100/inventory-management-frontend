@@ -22,7 +22,6 @@ export class AuthService {
   }
 
   isLoggedIn(){
-    console.log('check login')
     return localStorage.getItem(TOKEN) != null;
   }
   setToken(token: string): void {

@@ -4,7 +4,7 @@
       <h2 class="font-weight-normal"><img src="./../assets/cct.jpg">INVENTORY MANAGEMENT APP</h2>
     </div>
     <div>
-      <button mat-button class="h-100 float-right" (click)="logout()">Logout</button>
+      <button *ngIf="isLogin" mat-button class="h-100 float-right" (click)="logout()">Logout</button>
     </div>
   </div>
 </div>

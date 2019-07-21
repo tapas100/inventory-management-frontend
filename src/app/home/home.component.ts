@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit {
   }
 
   subscribeProducts() {
-    this.dataService.bankList$.subscribe(
+    this.dataService.inventoryList$.subscribe(
       response => {
         this.dataSource = new MatTableDataSource<any>(response);
         this.dataSource.paginator = this.paginator;
