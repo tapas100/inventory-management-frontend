@@ -1,6 +1,24 @@
+[![version](https://img.shields.io/badge/version-0.0.1-green.svg)](https://semver.org)
+
 # Inventory Mangement
 
+![app](inv.png)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.3.
+
+
+## Getting Started
+   Install node modules 
+   
+   ```js
+  npm install
+```
+   
+   Launch the application 
+   
+   ```js
+ng serve
+```
 
 ## Development server
 
