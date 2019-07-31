@@ -8,9 +8,17 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 
 ## Getting Started
-   Install node modules `npm install`
+   Install node modules 
    
-   Launch the application `ng serve`
+   ```js
+  npm install
+```
+   
+   Launch the application 
+   
+   ```js
+ng serve
+```
 
 ## Development server
 
