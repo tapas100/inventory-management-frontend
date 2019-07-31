@@ -40,7 +40,6 @@ export class RegisterComponent implements OnInit {
           this.dataService.handleLogin(true)
      },
       err=>{
-          console.log(err);
           this.toast.show(err.error.message)
       }
      )

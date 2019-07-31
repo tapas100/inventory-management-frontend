@@ -13,7 +13,6 @@ export class CacheInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<any> {
     if(req.method == 'POST' || req.method == 'PUT' || req.method == 'DELETE'){this.cahceService.clearCache()}
     const cachedResponse = this.cahceService.get(req);
-    console.log(cachedResponse);
     return cachedResponse
       ? of(cachedResponse)
       : this.sendRequest(req, next);

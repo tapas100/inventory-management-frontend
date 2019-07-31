@@ -45,7 +45,6 @@ export class HomeComponent implements OnInit {
       response => {
         this.dataSource = new MatTableDataSource<any>(response);
         this.dataSource.paginator = this.paginator;
-        console.log(this.dataSource)
       }
     );
   }

@@ -44,7 +44,6 @@ export class AddProductComponent implements OnInit {
   }
 
   onRate(event){
-    console.log(event);
     this.rating = event.newValue; 
   }
 }

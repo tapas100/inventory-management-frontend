@@ -44,14 +44,11 @@ export class AppComponent {
   suscribeLogin() {
     this.dataService.isLogin$.subscribe(res => {
       this.isLogin = res;
-      console.log(res);
     })
   }
 
   isLoggedIn() {
-    console.log('dahdakhdhakd')
     if (this.auth.isLoggedIn()) {
-      console.log('dahdakhdhakd')
       this.dataService.handleLogin(true);
     }
   }
